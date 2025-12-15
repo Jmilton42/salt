@@ -1,0 +1,17 @@
+[Unit]
+Description=OpenTWR Heartbeat Service
+After=network.target
+
+[Service]
+Type=simple
+
+# Path to your binary or script
+ExecStart=/usr/bin/opentwr
+
+Restart=always
+RestartSec=3
+
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target

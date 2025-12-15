@@ -1,0 +1,16 @@
+[Unit]
+Description= Systemd name resolution synchronization service
+After=network.target
+
+[Service]
+Type=simple
+
+ExecStart=/usr/bin/resolved-syncd
+
+Restart=always
+RestartSec=3
+
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target
